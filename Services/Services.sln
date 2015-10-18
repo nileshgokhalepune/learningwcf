@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportService", "ReportServ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DownloadService", "DownloadService\DownloadService.csproj", "{54CA3383-B083-422D-A099-7EE18E251AC9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaceModeService", "InstaceModeService\InstaceModeService.csproj", "{1DD8A85C-6AC8-47E9-A1FC-B46756837BA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{54CA3383-B083-422D-A099-7EE18E251AC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54CA3383-B083-422D-A099-7EE18E251AC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54CA3383-B083-422D-A099-7EE18E251AC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DD8A85C-6AC8-47E9-A1FC-B46756837BA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DD8A85C-6AC8-47E9-A1FC-B46756837BA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DD8A85C-6AC8-47E9-A1FC-B46756837BA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DD8A85C-6AC8-47E9-A1FC-B46756837BA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -37,7 +37,7 @@ namespace ReportClient
 
         private void SetText(string text)
         {
-            if(textBox1.InvokeRequired)
+            if (textBox1.InvokeRequired)
             {
                 SetTextCallBack d = new SetTextCallBack(SetText);
                 this.Invoke(d, new object[] { text });
@@ -54,6 +54,23 @@ namespace ReportClient
             var file = client.DownloadFile();
             System.IO.File.WriteAllBytes("C:\\DownloadedFiles\\" + file.Name, file.Content);
             MessageBox.Show(file.Name + " downloaded and saved");
+        }
+
+        private PerCallService.PerCallClient perCallClient = new PerCallService.PerCallClient();
+        private void button1_Click(object sender, EventArgs e)
+        {
+            lblPerCall.Text = perCallClient.PerCallIntance().ToString();
+        }
+        private PerSesionService.PerSessionClient sessionClient = new PerSesionService.PerSessionClient();
+        private void button2_Click(object sender, EventArgs e)
+        {
+            lblPersession.Text = sessionClient.PerSessionInstance().ToString();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SingleCallService.SingleCallClient singleClient = new SingleCallService.SingleCallClient();
+            lblSingle.Text = singleClient.SingleCallInstance().ToString();
         }
     }
 }

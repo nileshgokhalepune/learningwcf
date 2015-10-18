@@ -59,7 +59,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\PerCallService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PerSesionService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\ReportService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SingleCallService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -99,6 +114,20 @@
     <None Include="Service References\DownloadService\ReportClient.DownloadService.File.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\PerCallService\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PerCallService\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PerCallService\PerCall.wsdl" />
+    <None Include="Service References\PerSesionService\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PerSesionService\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PerSesionService\PerSession.wsdl" />
     <None Include="Service References\ReportService\item.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -106,13 +135,23 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ReportService\ReportService.wsdl" />
+    <None Include="Service References\SingleCallService\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SingleCallService\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SingleCallService\SingleCall.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\DownloadService\" />
+    <WCFMetadataStorage Include="Service References\PerCallService\" />
+    <WCFMetadataStorage Include="Service References\PerSesionService\" />
     <WCFMetadataStorage Include="Service References\ReportService\" />
+    <WCFMetadataStorage Include="Service References\SingleCallService\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ReportService\item.disco" />
@@ -140,6 +179,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\DownloadService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PerCallService\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PerCallService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PerCallService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PerCallService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PerSesionService\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PerSesionService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PerSesionService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PerSesionService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SingleCallService\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SingleCallService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SingleCallService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SingleCallService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

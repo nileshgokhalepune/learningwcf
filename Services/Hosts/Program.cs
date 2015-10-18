@@ -12,19 +12,59 @@ namespace Hosts
     {
         static void Main(string[] args)
         {
-            var service = args[0];
+            Console.WriteLine("Enter the service name from the list(Report, Download, Employee, PerCall, PerSession, SinglCall)");
+            var service = Console.ReadLine(); 
             if (service.Equals("Report"))
             {
                 StartReportService();
-            }else if (service.Equals("Employee"))
+            }
+            else if (service.Equals("Employee"))
             {
                 StartEmployeeService();
-            }else if (service.Equals("Download"))
+            }
+            else if (service.Equals("Download"))
             {
                 StartDownloadService();
             }
+            else if (service.Equals("PerCall"))
+            {
+                StartPerCallService();
+            }else if (service.Equals("PerSession"))
+            {
+                StartPerSessionService();
+            }
+            else if (service.Equals("SingleCall"))
+            {
+                StartSingleCallService();
+            }
         }
-        
+        static void StartSingleCallService()
+        {
+            using (ServiceHost host = new ServiceHost(typeof(InstaceModeService.SingleCall)))
+            {
+                host.Open();
+                Console.WriteLine("Singell call Service started @ " + DateTime.Now);
+                Console.ReadLine();
+            }
+        }
+        static void StartPerSessionService()
+        {
+            using (ServiceHost host = new ServiceHost(typeof(InstaceModeService.PerSession)))
+            {
+                host.Open();
+                Console.WriteLine("Per Session Service started @ " + DateTime.Now);
+                Console.ReadLine();
+            }
+        }
+        static void StartPerCallService()
+        {
+            using (ServiceHost host = new ServiceHost(typeof(InstaceModeService.PerCall)))
+            {
+                host.Open();
+                Console.WriteLine("Per Call Service started @ " + DateTime.Now);
+                Console.ReadLine();
+            }
+        }
         static void StartDownloadService()
         {
             using (ServiceHost host = new ServiceHost(typeof(DownloadService.DownloadService)))
