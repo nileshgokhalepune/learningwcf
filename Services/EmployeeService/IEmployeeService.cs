@@ -14,6 +14,10 @@ namespace EmployeeService
     {
         [OperationContract(Name = "Get")]
         Employee GetEmployee(int id);
+        [OperationContract(IsOneWay = true)]
+        void OneWayOperation();
+        [OperationContract(Name ="RequestReply")]
+        String RequestReply();
     }
     [ServiceContract]
     public interface IPrivateEmployeeService : IPublicEmployeeService
@@ -22,6 +26,8 @@ namespace EmployeeService
         void SaveEmployee(Employee emp);
         [OperationContract]
         List<Employee> GetEmployees(EmployeeType type);
+        [OperationContract(IsOneWay = true)]
+        void OnewayOperation_throwsExpcetion();
     }
 
 }

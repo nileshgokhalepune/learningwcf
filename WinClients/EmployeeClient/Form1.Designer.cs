@@ -40,6 +40,11 @@
             this.cmbGender = new System.Windows.Forms.ComboBox();
             this.btnGet = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnOneway = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.btnOnewayEx = new System.Windows.Forms.Button();
+            this.btnReqReply = new System.Windows.Forms.Button();
+            this.btnDuplex = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -150,11 +155,63 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // btnOneway
+            // 
+            this.btnOneway.Location = new System.Drawing.Point(15, 311);
+            this.btnOneway.Name = "btnOneway";
+            this.btnOneway.Size = new System.Drawing.Size(307, 23);
+            this.btnOneway.TabIndex = 12;
+            this.btnOneway.Text = "Oneway Operation";
+            this.btnOneway.UseVisualStyleBackColor = true;
+            this.btnOneway.Click += new System.EventHandler(this.btnOneway_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(15, 210);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(307, 69);
+            this.listBox1.TabIndex = 13;
+            // 
+            // btnOnewayEx
+            // 
+            this.btnOnewayEx.Location = new System.Drawing.Point(15, 286);
+            this.btnOnewayEx.Name = "btnOnewayEx";
+            this.btnOnewayEx.Size = new System.Drawing.Size(307, 23);
+            this.btnOnewayEx.TabIndex = 14;
+            this.btnOnewayEx.Text = "Oneway Exception";
+            this.btnOnewayEx.UseVisualStyleBackColor = true;
+            this.btnOnewayEx.Click += new System.EventHandler(this.btnOnewayEx_Click);
+            // 
+            // btnReqReply
+            // 
+            this.btnReqReply.Location = new System.Drawing.Point(15, 341);
+            this.btnReqReply.Name = "btnReqReply";
+            this.btnReqReply.Size = new System.Drawing.Size(307, 23);
+            this.btnReqReply.TabIndex = 15;
+            this.btnReqReply.Text = "Request Reply";
+            this.btnReqReply.UseVisualStyleBackColor = true;
+            this.btnReqReply.Click += new System.EventHandler(this.btnReqReply_Click);
+            // 
+            // btnDuplex
+            // 
+            this.btnDuplex.Location = new System.Drawing.Point(15, 371);
+            this.btnDuplex.Name = "btnDuplex";
+            this.btnDuplex.Size = new System.Drawing.Size(307, 23);
+            this.btnDuplex.TabIndex = 16;
+            this.btnDuplex.Text = "Duplex";
+            this.btnDuplex.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 262);
+            this.ClientSize = new System.Drawing.Size(357, 420);
+            this.Controls.Add(this.btnDuplex);
+            this.Controls.Add(this.btnReqReply);
+            this.Controls.Add(this.btnOnewayEx);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.btnOneway);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnGet);
             this.Controls.Add(this.cmbGender);
@@ -188,6 +245,11 @@
         private System.Windows.Forms.ComboBox cmbGender;
         private System.Windows.Forms.Button btnGet;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnOneway;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button btnOnewayEx;
+        private System.Windows.Forms.Button btnReqReply;
+        private System.Windows.Forms.Button btnDuplex;
     }
 }
 

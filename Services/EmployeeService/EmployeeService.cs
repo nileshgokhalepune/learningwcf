@@ -9,6 +9,7 @@ using System.ServiceModel.Configuration;
 using System.ServiceModel.Description;
 using System.ServiceModel.Dispatcher;
 using System.Text;
+using System.Threading;
 
 namespace EmployeeService
 {
@@ -55,32 +56,55 @@ namespace EmployeeService
 
             Employees.Add(emp);
         }
+
+        public void OnewayOperation_throwsExpcetion()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void OneWayOperation()
+        {
+            Thread.Sleep(2000);
+            return;
+        }
+
+        public string RequestReply()
+        {
+            Thread.Sleep(3000);
+            return "Complete";
+        }
     }
 
     public class EmployeeMessageInspector : IDispatchMessageInspector
     {
         public object AfterReceiveRequest(ref Message request, IClientChannel channel, InstanceContext instanceContext)
         {
-            MessageBuffer buffer = request.CreateBufferedCopy(Int32.MaxValue);
-            var msgCopy = buffer.CreateMessage();
-            request = buffer.CreateMessage();
-            var strData = buffer.CreateMessage().ToString();
+            if (request != null)
+            {
+                MessageBuffer buffer = request.CreateBufferedCopy(Int32.MaxValue);
+                var msgCopy = buffer.CreateMessage();
+                request = buffer.CreateMessage();
+                var strData = buffer.CreateMessage().ToString();
 
-            var xmlDAta = msgCopy.GetReaderAtBodyContents();
-            var bodyData = xmlDAta.ReadOuterXml();
-            strData = strData.Replace("... stream ...", bodyData);
-            Console.WriteLine("Received:\n{0}\n", strData);
+                var xmlDAta = msgCopy.GetReaderAtBodyContents();
+                var bodyData = xmlDAta.ReadOuterXml();
+                strData = strData.Replace("... stream ...", bodyData);
+                Console.WriteLine("Received:\n{0}\n", strData);
+            }
             return null;
         }
 
         public void BeforeSendReply(ref Message reply, object correlationState)
         {
-            MessageBuffer buffer = reply.CreateBufferedCopy(Int32.MaxValue);
-            var msgCopy = buffer.CreateMessage();
-            reply = buffer.CreateMessage();
-            var strData = buffer.CreateMessage().ToString();
+            if (reply != null)
+            {
+                MessageBuffer buffer = reply.CreateBufferedCopy(Int32.MaxValue);
+                var msgCopy = buffer.CreateMessage();
+                reply = buffer.CreateMessage();
+                var strData = buffer.CreateMessage().ToString();
 
-            Console.WriteLine("Sent:\n{0}\n", strData);
+                Console.WriteLine("Sent:\n{0}\n", strData);
+            }
         }
     }
 

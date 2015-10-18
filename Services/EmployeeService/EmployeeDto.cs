@@ -37,8 +37,8 @@ namespace EmployeeService
     }
 
     [DataContract]
-    //[KnownType(typeof(PermanantEmployee))]
-    //[KnownType(typeof(ContractEmployee))]
+    [KnownType(typeof(PermanantEmployee))]
+    [KnownType(typeof(ContractEmployee))]
     public abstract class Employee
     {
         [DataMember(Order = 1)]
